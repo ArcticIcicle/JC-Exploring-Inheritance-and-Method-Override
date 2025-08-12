@@ -2,18 +2,16 @@ package org.example;
 
 class GameCharacter {
     int health = 100;
-    public void takeDamage(int amount){
-        health -= amount;
-        System.out.println("Regular character takes " + amount + " damage. New health: " + health);
+    public int takeDamage(int amount){
+        this.health -= amount;
+        return amount;
     }
 }
 
 class ArmoredCharacter extends GameCharacter{
-    @Override
-    public void takeDamage(int amount){
+    public int takeDamage(int amount){
         int newAmount = amount/2;
-        health -= newAmount;
-        System.out.println("Armored character takes " + newAmount + " damage. New health: " + health);
-
+        super.takeDamage(newAmount);
+        return newAmount;
     }
 }

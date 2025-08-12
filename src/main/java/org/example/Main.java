@@ -36,11 +36,13 @@ public class Main {
 //        System.out.println("\n--- Polymorphic Editor ---");
 //        polyEditor.openFile();
 //
-//        GameCharacter regular = new GameCharacter();
-//        regular.takeDamage(100);
-//
-//        ArmoredCharacter armored = new ArmoredCharacter();
-//        armored.takeDamage(100);
+        GameCharacter regular = new GameCharacter();
+        int damageTaken = regular.takeDamage(100);
+        System.out.println("Regular character takes " + damageTaken + " damage. New health: " + regular.health);
+        ArmoredCharacter armored = new ArmoredCharacter();
+        damageTaken = armored.takeDamage(100);
+        System.out.println("Armored character takes " + damageTaken + " damage. New health: " + armored.health);
+
 
         // Ex 4
         CheckingAccount myChecking = new CheckingAccount(100.0);
